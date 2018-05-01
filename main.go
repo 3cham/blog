@@ -59,20 +59,6 @@ func isTopLevelURL(url string) bool {
 // this list was determined by watching /logs
 var noLog404 = map[string]bool{
 	"/crossdomain.xml":                                               true,
-	"/article/Exercise-links-1.html":                                 true,
-	"/article/Ecco-for-free.html":                                    true,
-	"/article/Disappointed-by-The-Bat.html":                          true,
-	"/article/Comments-need-not-apply.html":                          true,
-	"/article/Browsing-Newton.html":                                  true,
-	"/article/Perl-and-lisp-programmers.html":                        true,
-	"/article/iPod-competition.html":                                 true,
-	"/article/Programming-Jabber.html":                               true,
-	"/article/Good-software-design-contradicts-eXtreme-Program.html": true,
-	"/article/Bloglines-vs-Google-Reader-the-verdict.html":           true,
-	"/2002/07/30/stuid-coding-mistake-of-the-day.html":               true,
-	"/article/Corman-Lisp.html":                                      true,
-	"/article/Offshore-outsourcing.html":                             true,
-	"/article/Nabble-hosted-forums.html":                             true,
 }
 
 func shouldLog404(s string) bool {

@@ -18,13 +18,9 @@ func makeHTTPServer() *http.Server {
 	mux.HandleFunc("/atom.xml", withAnalyticsLogging(handleAtom))
 	mux.HandleFunc("/atom-all.xml", withAnalyticsLogging(handleAtomAll))
 	mux.HandleFunc("/archives.html", withAnalyticsLogging(handleArchives))
-	mux.HandleFunc("/software", withAnalyticsLogging(handleSoftware))
-	mux.HandleFunc("/software/", withAnalyticsLogging(handleSoftware))
-	mux.HandleFunc("/extremeoptimizations/", withAnalyticsLogging(handleExtremeOpt))
 	mux.HandleFunc("/article/", withAnalyticsLogging(handleArticle))
 	mux.HandleFunc("/kb/", withAnalyticsLogging(handleArticle))
 	mux.HandleFunc("/blog/", withAnalyticsLogging(handleArticle))
-	mux.HandleFunc("/forum_sumatra/", withAnalyticsLogging(forumRedirect))
 	mux.HandleFunc("/articles/", withAnalyticsLogging(handleArticles))
 	mux.HandleFunc("/tag/", withAnalyticsLogging(handleTag))
 	mux.HandleFunc("/static/", withAnalyticsLogging(handleStatic))
@@ -33,7 +29,6 @@ func makeHTTPServer() *http.Server {
 	mux.HandleFunc("/dailynotes/tag/", withAnalyticsLogging(handleNotesTag))
 	mux.HandleFunc("/dailynotes/note/", withAnalyticsLogging(handleNotesNote))
 	mux.HandleFunc("/dailynotes", withAnalyticsLogging(handleNotesIndex))
-	mux.HandleFunc("/tools/generate-unique-id", withAnalyticsLogging(handleGenerateUniqueID))
 	mux.HandleFunc("/worklog", handleWorkLog)
 
 	// not logged because not interesting for visitor analytics
