@@ -27,7 +27,7 @@ import (
 )
 
 var (
-	analyticsCode = "UA-194516-1"
+	analyticsCode = "UA-118493657-1"
 
 	logger  *ServerLogger
 	dataDir string
