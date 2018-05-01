@@ -185,9 +185,9 @@ func handleFavicon(w http.ResponseWriter, r *http.Request) {
 	serveFileFromDir(w, r, getStaticDir(), "favicon.ico")
 }
 
-// url: /contactme.html
+// url: /about.html
 func handleContactme(w http.ResponseWriter, r *http.Request) {
-	serveFileFromDir(w, r, getStaticDir(), "contactme.html")
+	serveFileFromDir(w, r, getStaticDir(), "about.html")
 }
 
 // url: /robots.txt

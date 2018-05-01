@@ -28,7 +28,6 @@ var redirects = map[string]string{
 	"/articles/cocoa-objectivec-reference.html":     "/articles/cocoa-reference.html",
 	"/forum_sumatra/rss.php":                        "http://forums.fofou.org/sumatrapdf/rss",
 	"/forum_sumatra":                                "http://forums.fofou.org/sumatrapdf",
-	"/google6dba371684d43cd6.html":                  "/static/google6dba371684d43cd6.html",
 	"/software/15minutes/index.html":                "/software/15minutes.html",
 	"/software/15minutes/":                          "/software/15minutes.html",
 	"/software/fofou":                               "/software/fofou/index.html",
@@ -56,7 +55,7 @@ var redirects = map[string]string{
 	"/software/fotofi/":                             "/software/fotofi/free-stock-photos.html",
 	"/software/fotofi/index.html":                   "/software/fotofi/free-stock-photos.html",
 	"/static/software.html":                         "/software/index.html",
-	"/static/krzysztof.html":                        "/static/resume.html",
+	"/static/krzysztof.html":                        "/static/about.html",
 }
 
 var articleRedirects = make(map[string]string)
