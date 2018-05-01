@@ -227,7 +227,7 @@ func handleGenerateUniqueID(w http.ResponseWriter, r *http.Request) {
 	entropy := rand.New(rand.NewSource(t.UnixNano()))
 	idUlid := ulid.MustNew(ulid.Timestamp(t), entropy)
 	betterGUID := betterguid.New()
-	uuid := uuid.NewV4()
+	uuid, _ := uuid.NewV4()
 
 	flake := sonyflake.NewSonyflake(sonyflake.Settings{})
 	sfid, err := flake.NextID()
