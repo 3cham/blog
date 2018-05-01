@@ -21,23 +21,8 @@ var (
 	// based on 404 logs
 	dontLog404 = map[string]bool{
 		"/robots.txt":                                      true,
-		"/home/team/prod/bin/render_server/preload.js.map": true,
-		"/components/com_mailto/views/sent/metadata.xml":   true,
-		"/wp-content/themes/twentyeleven/readme.txt":       true,
-		"/orange-app-site-association":                      true,
-		"/help.txt":                                        true,
-		"/archives/2004/12/29/google-we-take-it-all-give-nothing-back/ ":     true,
-		"/article/ffn/Accessing-Mac-file-shares-from-Windows-7.html":         true,
-		"/article/1ir/Programmers-are-silver-bullets-or-after-all-this.html": true,
-		"/readme.html":                                                                            true,
-		"/readme.htm":                                                                             true,
-		"/readme.txt":                                                                             true,
-		"/.well-known/orange-app-site-association":                                                 true,
-		"libraries/joomla/filesystem/meta/language/en-GB/en-GB.lib_joomla_filesystem_patcher.ini": true,
-		"/joomla.xml": true,
 		"/README.txt": true,
 		"/login":      true,
-		"/archives/2006/04/08/bloglines-vs-newsgator/": true,
 		"/.git/HEAD":                                   true,
 		"/setup":                                       true,
 	}
