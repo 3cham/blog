@@ -13,7 +13,7 @@ import (
 
 	"github.com/kennygrant/sanitize"
 	"github.com/kjk/u"
-	"github.com/mvdan/xurls"
+	"mvdan.cc/xurls"
 	"github.com/sourcegraph/syntaxhighlight"
 )
 
@@ -234,7 +234,7 @@ func genRandomString() string {
 }
 
 func noteToHTML(s string) string {
-	urls := xurls.Relaxed.FindAllString(s, -1)
+	urls := xurls.Strict().FindAllString(s, -1)
 	urls = u.RemoveDuplicateStrings(urls)
 
 	// sort by length, longest first, so that we correctly convert
