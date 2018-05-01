@@ -275,7 +275,7 @@ func logWebAnalytics(r *http.Request, code int, nBytesWritten int64, dur time.Du
 	}
 	uri := r.RequestURI
 
-	ipAddr := u.RequestGetIPAddress(r)
+	ipAddr := u.RequestGetRemoteAddress(r)
 	when := time.Now().UTC().Format(time.RFC3339)
 	codeStr := strconv.Itoa(code)
 	durMs := float64(dur) / float64(time.Millisecond)
