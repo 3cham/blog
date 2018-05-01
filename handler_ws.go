@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-fsnotify/fsnotify"
+	"github.com/fsnotify/fsnotify"
 	"github.com/gorilla/websocket"
 )
 
