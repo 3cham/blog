@@ -282,15 +282,15 @@ func logWebAnalytics(r *http.Request, code int, nBytesWritten int64, dur time.Du
 	durStr := strconv.FormatFloat(durMs, 'f', 2, 64)
 	sizeStr := strconv.FormatInt(nBytesWritten, 10)
 	var rec siser.Record
-	rec = rec.Append(keyURI, uri, keyCode, codeStr, keyIPAddr, ipAddr, keyDuration, durStr, keyWhen, when, keySize, sizeStr)
+	rec.Append(keyURI, uri, keyCode, codeStr, keyIPAddr, ipAddr, keyDuration, durStr, keyWhen, when, keySize, sizeStr)
 
 	ua := r.Header.Get("user-agent")
 	if ua != "" {
-		rec = rec.Append(keyUserAgent, ua)
+		rec.Append(keyUserAgent, ua)
 	}
 	referer := r.Referer()
 	if referer != "" {
-		rec = rec.Append(keyReferer, referer)
+		rec.Append(keyReferer, referer)
 	}
 	d := rec.Marshal()
 	// ignoring error because can't do anything about it
