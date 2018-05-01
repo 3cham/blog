@@ -29,8 +29,8 @@ func handleAtomHelp(w http.ResponseWriter, r *http.Request, excludeNotes bool) {
 	}
 
 	feed := &atom.Feed{
-		Title:   "Krzysztof Kowalczyk blog",
-		Link:    "https://blog.kowalczyk.info/atom.xml",
+		Title:   "Tung Dang blog",
+		Link:    "http://3cham.io/atom.xml",
 		PubDate: pubTime,
 	}
 
@@ -38,7 +38,7 @@ func handleAtomHelp(w http.ResponseWriter, r *http.Request, excludeNotes bool) {
 		//id := fmt.Sprintf("tag:blog.kowalczyk.info,1999:%d", a.Id)
 		e := &atom.Entry{
 			Title:   a.Title,
-			Link:    "https://blog.kowalczyk.info/" + a.Permalink(),
+			Link:    "http://3cham.io/" + a.Permalink(),
 			Content: a.BodyHTML,
 			PubDate: a.PublishedOn,
 		}
@@ -77,8 +77,8 @@ func handleNotesFeed(w http.ResponseWriter, r *http.Request) {
 	}
 
 	feed := &atom.Feed{
-		Title:   "Krzysztof Kowalczyk daily notes",
-		Link:    "https://blog.kowalczyk.info/dailynotes-atom.xml",
+		Title:   "Tung Dang daily notes",
+		Link:    "http://3cham.io/dailynotes-atom.xml",
 		PubDate: pubTime,
 	}
 
@@ -91,7 +91,7 @@ func handleNotesFeed(w http.ResponseWriter, r *http.Request) {
 		html := `<pre>` + n.HTMLBody + `</pre>`
 		e := &atom.Entry{
 			Title:   title,
-			Link:    "https://blog.kowalczyk.info/" + n.URL,
+			Link:    "http://3cham.io/" + n.URL,
 			Content: html,
 			PubDate: n.Day,
 		}

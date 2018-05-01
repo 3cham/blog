@@ -1,4 +1,4 @@
-This is a simple blog engine original from https://blog.kowalczyk.info
+This is a simple blog engine original from http://3cham.io
 
 It's written in Go. Doesn't require a database as all data is stored in files.
 

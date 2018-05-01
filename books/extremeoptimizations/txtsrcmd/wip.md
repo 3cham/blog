@@ -3,7 +3,7 @@ Title: Extreme (size) optimization in C, C++ and Objective-C.
 Extreme (size) optimization in C, C++ and Objective-C.
 ======================================================
 
-by [Krzysztof Kowalczyk][]
+by [Tung Dang][]
 
 What is this about?
 -------------------
@@ -35,7 +35,7 @@ Table of contents
 11. [Case study: optimizing disassembler in v8][]
 12. [Other misc ideas][]
 
-  [Krzysztof Kowalczyk]: https://blog.kowalczyk.info
+  [Tung Dang]: https://blog.kowalczyk.info
   []: >http://farm1.static.flickr.com/206/512024537_3da49317eb_m.jpg
   [Why optimize?]: why_optimize.html
   [An optimization story]: optimization_story.html

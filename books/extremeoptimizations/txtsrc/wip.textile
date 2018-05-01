@@ -2,7 +2,7 @@ Title: Extreme (size) optimization in C, C++ and Objective-C.
 
 h1. Extreme (size) optimization in C, C++ and Objective-C.
 
-by "Krzysztof Kowalczyk":https://blog.kowalczyk.info
+by "Tung Dang":https://blog.kowalczyk.info
 
 h2. What is this about?
 

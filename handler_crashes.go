@@ -47,9 +47,9 @@ func handleCrashesRss(w http.ResponseWriter, r *http.Request) {
 
 	feed := &atom.Feed{
 		Title:   fmt.Sprintf("Crashes %s", appName),
-		Link:    fmt.Sprintf("https://blog.kowalczyk.info/app/crashesrss?app_name=%s", appName),
+		Link:    fmt.Sprintf("http://3cham.io/app/crashesrss?app_name=%s", appName),
 		PubDate: pubDate}
-	baseURL := fmt.Sprintf("https://blog.kowalczyk.info/app/crashes?app_name=%s", appName)
+	baseURL := fmt.Sprintf("http://3cham.io/app/crashes?app_name=%s", appName)
 	if firstDayIdx == -1 {
 		e := &atom.Entry{
 			Title:   fmt.Sprintf("Crashes for %s", appName),

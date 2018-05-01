@@ -592,7 +592,7 @@ class _HTMLSanitizer(_BaseHTMLProcessor):
       'span', 'src', 'start', 'summary', 'tabindex', 'target', 'title', 'type',
       'usemap', 'valign', 'value', 'vspace', 'width']
     
-    unacceptable_elements_with_end_tag = ['script', 'applet'] 
+    unacceptable_elements_with_end_tag = ['script', 'oranget'] 
     
     # This if for MathML.
     mathml_elements = ['math', 'mi', 'mn', 'mo', 'mrow', 'msup']

@@ -76,7 +76,7 @@ var noLog404 = map[string]bool{
 }
 
 func shouldLog404(s string) bool {
-	if strings.HasPrefix(s, "/apple-touch-icon") {
+	if strings.HasPrefix(s, "/orange-touch-icon") {
 		return false
 	}
 	_, ok := noLog404[s]
