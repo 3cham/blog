@@ -242,6 +242,7 @@ func main() {
 		httpsSrv = makeHTTPServer()
 		httpsSrv.Addr = ":443"
 		httpsSrv.TLSConfig = &tls.Config{GetCertificate: m.GetCertificate}
+		go http.ListenAndServe(":80", m.HTTPHandler(nil))
 		logger.Noticef("Starting https server on %s\n", httpsSrv.Addr)
 		go func() {
 			wg.Add(1)
