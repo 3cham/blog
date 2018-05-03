@@ -226,7 +226,7 @@ func main() {
 
 	if flgProduction {
 		hostPolicy := func(ctx context.Context, host string) error {
-			allowedDomain := "kowalczyk.info"
+			allowedDomain := "3cham.io"
 			if strings.HasSuffix(host, allowedDomain) {
 				return nil
 			}
