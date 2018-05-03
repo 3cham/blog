@@ -257,20 +257,22 @@ func main() {
 		}()
 	}
 
-	httpSrv := makeHTTPServer()
-	httpSrv.Addr = flgHTTPAddr
-	logger.Noticef("Starting http server on %s, in production: %v, ver: github.com/kjk/blog/commit/%s", httpSrv.Addr, flgProduction, sha1ver)
-	go func() {
-		wg.Add(1)
-		err := httpSrv.ListenAndServe()
-		// mute error caused by Shutdown()
-		if err == http.ErrServerClosed {
-			err = nil
-		}
-		u.PanicIfErr(err)
-		fmt.Printf("HTTP server shutdown gracefully\n")
-		wg.Done()
-	}()
+	if !flgProduction {
+		httpSrv := makeHTTPServer()
+		httpSrv.Addr = flgHTTPAddr
+		logger.Noticef("Starting http server on %s, in production: %v, ver: github.com/kjk/blog/commit/%s", httpSrv.Addr, flgProduction, sha1ver)
+		go func() {
+			wg.Add(1)
+			err := httpSrv.ListenAndServe()
+			// mute error caused by Shutdown()
+			if err == http.ErrServerClosed {
+				err = nil
+			}
+			u.PanicIfErr(err)
+			fmt.Printf("HTTP server shutdown gracefully\n")
+			wg.Done()
+		}()
+	}
 
 	if flgProduction {
 		sendBootMail()
