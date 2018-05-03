@@ -233,7 +233,7 @@ func main() {
 			return fmt.Errorf("acme/autocert: only *.%s hosts are allowed", allowedDomain)
 		}
 
-		m := autocert.Manager{
+		m := &autocert.Manager{
 			Prompt:     autocert.AcceptTOS,
 			HostPolicy: hostPolicy,
 			Cache:      autocert.DirCache(getDataDir()),
@@ -257,11 +257,11 @@ func main() {
 		}()
 	}
 
-	if !flgProduction {
-		httpSrv := makeHTTPServer()
-		httpSrv.Addr = flgHTTPAddr
-		logger.Noticef("Starting http server on %s, in production: %v, ver: github.com/kjk/blog/commit/%s", httpSrv.Addr, flgProduction, sha1ver)
-		go func() {
+	httpSrv := makeHTTPServer()
+	httpSrv.Addr = flgHTTPAddr
+	logger.Noticef("Starting http server on %s, in production: %v, ver: github.com/kjk/blog/commit/%s", httpSrv.Addr, flgProduction, sha1ver)
+	go func() {
+		if !flgProduction {
 			wg.Add(1)
 			err := httpSrv.ListenAndServe()
 			// mute error caused by Shutdown()
@@ -271,8 +271,8 @@ func main() {
 			u.PanicIfErr(err)
 			fmt.Printf("HTTP server shutdown gracefully\n")
 			wg.Done()
-		}()
-	}
+		}
+	}()
 
 	if flgProduction {
 		sendBootMail()
